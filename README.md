@@ -1,4 +1,4 @@
-# deej
+# Custom deej
 
 Custom deej is an hardware volume mixer for Windows.
 It lets you use real-life sliders, potentiometers, buttons, small screen and led lights to seamlessly control the volumes of different apps, and In-App (such as your music player, the game you're playing and your voice chat session) without having to stop what you're doing.
@@ -10,9 +10,7 @@ The fork is from [deej](https://github.com/omriharel/deej) by Omeri Harel, you s
 - [Features](#features)
 - [Hardware](#hardware)
 - [Software](#software)
-  -- [Arduiuno C Code](#arduino)
-  -- [Windows Go Code](#arduino)
-- [How to run](#how-to-run)
+- [License](#license)
 
 ### Features
 
@@ -31,20 +29,13 @@ This Fork contain few more features then the starndard [deej](https://github.com
 
 #### Arduino
 
-- The code running on the Arduino board is a [C program](./arduino/deej-5-sliders-vanilla/deej-5-sliders-vanilla.ino) ,Its need to be adjusted to your Hardware
+- The code running on the Arduino board is a [C program](./arduino/deej-5-sliders-vanilla/deej-5-sliders-vanilla.ino) , and is using the configuration in first segment of the file.
 
 #### Windows
 
-- The PC runs a lightweight [Go client](./pkg/deej/cmd/main.go) in the background. This client reads the serial stream and adjusts app volumes according to the given configuration file
+- The PC runs a [Go client](./pkg/deej/cmd/main.go) in the background, and its using YAML-formatted configuration file named config.yaml. 
 
-## How to run
+### License
 
-deej uses a simple YAML-formatted configuration file named [`config.yaml`](./config.yaml), placed alongside the deej executable.
-
-The config file determines which applications (and devices) are mapped to which sliders, and which parameters to use for the connection to the Arduino board, as well as other user preferences.
-
-**This file auto-reloads when its contents are changed, so you can change application mappings on-the-fly without restarting deej.**
-
-## License
-
-deej is released under the [MIT license](./LICENSE).
+[deej](https://github.com/omriharel/deej) is released under the [MIT license](./LICENSE).
+[custpm deej](https://github.com/Omer-St/custom_deej) is released under the [MIT license](./LICENSE).
